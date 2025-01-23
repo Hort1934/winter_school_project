@@ -13,7 +13,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.13]
+        python-version: [3.13.1]
         django-version: [5.1.5]
 
     steps:
