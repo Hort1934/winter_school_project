@@ -1,0 +1,50 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# Python
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+.eggs/
+
+# Virtual environment
+env/
+venv/
+ENV/
+VENV/
+
+# PyCharm specific
+.idea/
+*.iml
+*.iws
+
+# Django
+*.log
+local_settings.py
+staticfiles/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+.env
+.venv
+ENV/
+env/
+venv/
+ENV.bak/
+env.bak/
+
+# Django migrations
+*/migrations/*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
