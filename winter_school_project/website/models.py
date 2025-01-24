@@ -64,13 +64,13 @@ class Health_Vulnerability_Proof(models.Model):
 class Task(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    asking_individual = models.ForeignKey(Individual, on_delete=models.SET_NULL)
+    asking_individual = models.ForeignKey(Individual, on_delete=models.SET_NULL, null=True)
     location_lat = models.FloatField(null=True)
     location_long = models.FloatField(null=True)
     address_text = models.TextField(null=True)
     datetime_created = models.DateTimeField()
     datetime_planned = models.DateTimeField()
-    category = models.ForeignKey(Task_Category, on_delete=models.SET_NULL)
+    category = models.ForeignKey(Task_Category, on_delete=models.SET_NULL, null=True)
     status = models.PositiveSmallIntegerField()
 
 class Predefined_Trait_Of_Task(models.Model):
@@ -128,7 +128,7 @@ class Benefit(models.Model):
 
 class Benefits_Acquisition(models.Model):
     individual = models.ForeignKey(Individual, on_delete=models.CASCADE)
-    benefit = models.ForeignKey(Benefit, on_delete=models.SET_NULL)
+    benefit = models.ForeignKey(Benefit, on_delete=models.CASCADE)
     date_valid_since = models.DateField()
 
 # -------
