@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<h1>Ласкаво просимо на Платформу Волонтерства!</h1>
+<p>Волонтерити може кожен!</p>
+<a href="{% url 'volunteer_tasks' %}" class="btn">Я хочу допомогти</a>
+<a href="{% url 'request_help' %}" class="btn">Я потребую допомоги</a>
+{% endblock %}

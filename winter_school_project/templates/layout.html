@@ -1,22 +1,21 @@
-<!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>
-        {% block title %}
-            Django App
-        {% endblock %}
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Платформа Волонтерства{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <nav>
-        <a href="/">home</a> | <a href="/about">about</a>
+    <!-- Верхнє меню -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <p><a href="/">Home</a></p>
+                <img src="{% static 'images/logo.png' %}" alt="Лого" />
+                <span>Платформа Волонтерства</span>
+            </a>
+        </div>
     </nav>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
 </body>
 </html>
