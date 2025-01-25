@@ -76,8 +76,20 @@ WSGI_APPLICATION = 'winter_school_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'desw2025appdb',
+        'USER':'djangouser',
+        'PASSWORD':'pass',
+        'HOST': '127.0.0.1',
+        'PORT' : '3306'
+    },
+    'mockstatedb': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'desw2025mockdb',
+        'USER':'djangouser',
+        'PASSWORD':'pass',
+        'HOST': '127.0.0.1',
+        'PORT' : '3306'
     }
 }
 
