@@ -653,6 +653,7 @@ CREATE TABLE `website_predefined_skill` (
 
 LOCK TABLES `website_predefined_skill` WRITE;
 /*!40000 ALTER TABLE `website_predefined_skill` DISABLE KEYS */;
+INSERT INTO `website_predefined_skill` VALUES (0,'Медична осв?та'),(1,'Перша медична допомога'),(3,'Жестова мова'),(4,'Догляд за д?тьми'),(5,'Догляд за л?тн?ми людьми'),(6,'Догляд за тваринами'),(7,'Ремонт, буд?вництво ? т.п.'),(8,'Рослинне господарство, сад?вництво'),(9,'Кул?нарн? навички');
 /*!40000 ALTER TABLE `website_predefined_skill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -677,6 +678,7 @@ CREATE TABLE `website_predefined_task_trait` (
 
 LOCK TABLES `website_predefined_task_trait` WRITE;
 /*!40000 ALTER TABLE `website_predefined_task_trait` DISABLE KEYS */;
+INSERT INTO `website_predefined_task_trait` VALUES (0,'Багато в?льного часу'),(1,'Ф?зична сила'),(2,'Власне авто'),(3,'Власн? ?нструменти'),(4,'Квал?ф?кац?я');
 /*!40000 ALTER TABLE `website_predefined_task_trait` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -768,6 +770,7 @@ CREATE TABLE `website_task_category` (
 
 LOCK TABLES `website_task_category` WRITE;
 /*!40000 ALTER TABLE `website_task_category` DISABLE KEYS */;
+INSERT INTO `website_task_category` VALUES (0,'Побутов? справи',20,80),(1,'Допомога з господарством (напр. на д?лянц?)',30,120),(2,'Допомога з тваринами',20,100),(3,'Ремонт та благоустр?й',50,220),(4,'Доставка продукт?в та невеликих предмет?в',10,35),(5,'Доставка чи перевезення вантаж?в',40,160),(6,'Супров?д та перевезення людей',30,110),(7,'Соц?альн? справи',40,120);
 /*!40000 ALTER TABLE `website_task_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -891,4 +894,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-25 19:33:24
+-- Dump completed on 2025-01-25 21:21:19
