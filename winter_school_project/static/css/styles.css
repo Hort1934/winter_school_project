@@ -1,20 +1,50 @@
+:root {
+    --mint-cream: #f1fffaff;
+    --tea-green: #ccfccbff;
+    --celadon: #96e6b3ff;
+    --mantis: #56b259ff;
+    --outer-space: #464e47ff;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    background: var(--tea-green);
+}
+main {
+    display: grid;
+    flex-grow: 1;
+}
+nav {
+    background-color: var(--tea-green);
+}
+
+h1 {
+    color: var(--mantis);
+}
+
+p {
+    color: var(--outer-space);
+}
+
+footer {
+    text-align:center;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff;
     color: white;
     padding: 10px 20px;
 }
 
 .navbar a {
-    color: white;
+    color: var(--outer-space);
     text-decoration: none;
     margin: 0 10px;
 }
@@ -59,4 +89,10 @@ body {
 
 .btn:hover {
     background-color: #218838;
+}
+
+.social-balance {
+    font-size: 1.2rem;
+    color: var(--mantis);
+    text-shadow: 1px 1px 0.5rem var(--mint-cream);
 }

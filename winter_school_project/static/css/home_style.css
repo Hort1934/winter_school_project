@@ -1,0 +1,74 @@
+h1 {
+    text-shadow: 0 0 1rem var(--celadon);
+    text-align: center;
+    padding-top: 3vh;
+}
+
+div > p:last-child {
+    text-align: center;
+}
+
+main {
+    grid-template-rows: auto minmax(0, 100%);
+    box-shadow: inset 0 2vh 4vh 0 var(--mint-cream);
+}
+
+main> div:nth-child(1) {
+    padding-left: 10vh;
+    padding-right: 10vh;
+    padding-top: 6vh;
+}
+
+.ui-description {
+    font-size: 1.5rem;
+}
+
+.intro-button {
+    width: 30%;
+    border: 4px solid white;
+    text-align: center;
+    font-size: 2.25rem;
+    border-radius: 4vh;
+    text-decoration: none;
+    padding-right: 6vh;
+    padding-left: 6vh;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+#motivation {
+    text-align: start;
+}
+
+#big-btns-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#between-btns {
+    width: 20vh;
+}
+
+#icanhelp {
+    background-color: var(--celadon);
+    color: var(--outer-space);
+}
+#icanhelp:hover {
+    box-shadow: inset 0 0 5vh 2vh var(--tea-green);
+}
+#icanhelp:active {
+    box-shadow: inset 0 0 2vh 0.5vh var(--mantis);
+}
+
+#helpme {
+    background-color: var(--mantis);
+    color: var(--mint-cream);
+}
+#helpme:hover {
+    box-shadow: inset 0 0 5vh 1vh var(--celadon);
+}
+#helpme:active {
+    box-shadow: inset 0 0 2vh 0.5vh var(--outer-space);
+}

@@ -2,9 +2,21 @@
 
 {% block title %}Головна{% endblock %}
 
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+{%endblock%}
+
 {% block content %}
-<h1>Ласкаво просимо на Платформу Волонтерства!</h1>
-<p>Волонтерити може кожен!</p>
-<a href="{% url 'volunteer_tasks' %}" class="btn">Я хочу допомогти</a>
-<a href="{% url 'request_help' %}" class="btn">Я потребую допомоги</a>
+<div>
+    <h1>Ласкаво просимо на Платформу Волонтерства!</h1>
+    <hr/>
+    <p>Волонтерити може кожен!</p>
+</div>
+
+<div id="big-btns-container">
+    <a href="{% url 'volunteer_tasks' %}" id="icanhelp" class="intro-button">Я хочу допомогти</a>
+    <div id="between-btns"></div>
+    <a href="{% url 'request_help' %}" id="helpme" class="intro-button">Я потребую допомоги</a>
+</div>
 {% endblock %}
