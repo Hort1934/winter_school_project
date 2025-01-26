@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add health_ vulnerability_ proof',7,'add_health_vulnerability_proof'),(26,'Can change health_ vulnerability_ proof',7,'change_health_vulnerability_proof'),(27,'Can delete health_ vulnerability_ proof',7,'delete_health_vulnerability_proof'),(28,'Can view health_ vulnerability_ proof',7,'view_health_vulnerability_proof'),(29,'Can add task',8,'add_task'),(30,'Can change task',8,'change_task'),(31,'Can delete task',8,'delete_task'),(32,'Can view task',8,'view_task'),(33,'Can add individual_ phone',9,'add_individual_phone'),(34,'Can change individual_ phone',9,'change_individual_phone'),(35,'Can delete individual_ phone',9,'delete_individual_phone'),(36,'Can view individual_ phone',9,'view_individual_phone'),(37,'Can add organization',10,'add_organization'),(38,'Can change organization',10,'change_organization'),(39,'Can delete organization',10,'delete_organization'),(40,'Can view organization',10,'view_organization'),(41,'Can add task_ category',11,'add_task_category'),(42,'Can change task_ category',11,'change_task_category'),(43,'Can delete task_ category',11,'delete_task_category'),(44,'Can view task_ category',11,'view_task_category'),(45,'Can add predefined_ skill',12,'add_predefined_skill'),(46,'Can change predefined_ skill',12,'change_predefined_skill'),(47,'Can delete predefined_ skill',12,'delete_predefined_skill'),(48,'Can view predefined_ skill',12,'view_predefined_skill'),(49,'Can add organization_ office',13,'add_organization_office'),(50,'Can change organization_ office',13,'change_organization_office'),(51,'Can delete organization_ office',13,'delete_organization_office'),(52,'Can view organization_ office',13,'view_organization_office'),(53,'Can add benefit',14,'add_benefit'),(54,'Can change benefit',14,'change_benefit'),(55,'Can delete benefit',14,'delete_benefit'),(56,'Can view benefit',14,'view_benefit'),(57,'Can add individual_ predefined_ skill',15,'add_individual_predefined_skill'),(58,'Can change individual_ predefined_ skill',15,'change_individual_predefined_skill'),(59,'Can delete individual_ predefined_ skill',15,'delete_individual_predefined_skill'),(60,'Can view individual_ predefined_ skill',15,'view_individual_predefined_skill'),(61,'Can add task_ needed_ skill',16,'add_task_needed_skill'),(62,'Can change task_ needed_ skill',16,'change_task_needed_skill'),(63,'Can delete task_ needed_ skill',16,'delete_task_needed_skill'),(64,'Can view task_ needed_ skill',16,'view_task_needed_skill'),(65,'Can add individual_ custom_ skill',17,'add_individual_custom_skill'),(66,'Can change individual_ custom_ skill',17,'change_individual_custom_skill'),(67,'Can delete individual_ custom_ skill',17,'delete_individual_custom_skill'),(68,'Can view individual_ custom_ skill',17,'view_individual_custom_skill'),(69,'Can add organization_ phone',18,'add_organization_phone'),(70,'Can change organization_ phone',18,'change_organization_phone'),(71,'Can delete organization_ phone',18,'delete_organization_phone'),(72,'Can view organization_ phone',18,'view_organization_phone'),(73,'Can add task_ custom_ trait',19,'add_task_custom_trait'),(74,'Can change task_ custom_ trait',19,'change_task_custom_trait'),(75,'Can delete task_ custom_ trait',19,'delete_task_custom_trait'),(76,'Can view task_ custom_ trait',19,'view_task_custom_trait'),(77,'Can add individual',20,'add_individual'),(78,'Can change individual',20,'change_individual'),(79,'Can delete individual',20,'delete_individual'),(80,'Can view individual',20,'view_individual'),(81,'Can add predefined_ task_ trait',21,'add_predefined_task_trait'),(82,'Can change predefined_ task_ trait',21,'change_predefined_task_trait'),(83,'Can delete predefined_ task_ trait',21,'delete_predefined_task_trait'),(84,'Can view predefined_ task_ trait',21,'view_predefined_task_trait'),(85,'Can add volunteering',22,'add_volunteering'),(86,'Can change volunteering',22,'change_volunteering'),(87,'Can delete volunteering',22,'delete_volunteering'),(88,'Can view volunteering',22,'view_volunteering'),(89,'Can add predefined_ trait_ of_ task',23,'add_predefined_trait_of_task'),(90,'Can change predefined_ trait_ of_ task',23,'change_predefined_trait_of_task'),(91,'Can delete predefined_ trait_ of_ task',23,'delete_predefined_trait_of_task'),(92,'Can view predefined_ trait_ of_ task',23,'view_predefined_trait_of_task'),(93,'Can add vulnerability_ proof',24,'add_vulnerability_proof'),(94,'Can change vulnerability_ proof',24,'change_vulnerability_proof'),(95,'Can delete vulnerability_ proof',24,'delete_vulnerability_proof'),(96,'Can view vulnerability_ proof',24,'view_vulnerability_proof'),(97,'Can add individual_ social',25,'add_individual_social'),(98,'Can change individual_ social',25,'change_individual_social'),(99,'Can delete individual_ social',25,'delete_individual_social'),(100,'Can view individual_ social',25,'view_individual_social'),(101,'Can add organization_ social',26,'add_organization_social'),(102,'Can change organization_ social',26,'change_organization_social'),(103,'Can delete organization_ social',26,'delete_organization_social'),(104,'Can view organization_ social',26,'view_organization_social'),(105,'Can add benefits_ acquisition',27,'add_benefits_acquisition'),(106,'Can change benefits_ acquisition',27,'change_benefits_acquisition'),(107,'Can delete benefits_ acquisition',27,'delete_benefits_acquisition'),(108,'Can view benefits_ acquisition',27,'view_benefits_acquisition');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add health_ vulnerability_ proof',7,'add_health_vulnerability_proof'),(26,'Can change health_ vulnerability_ proof',7,'change_health_vulnerability_proof'),(27,'Can delete health_ vulnerability_ proof',7,'delete_health_vulnerability_proof'),(28,'Can view health_ vulnerability_ proof',7,'view_health_vulnerability_proof'),(29,'Can add task',8,'add_task'),(30,'Can change task',8,'change_task'),(31,'Can delete task',8,'delete_task'),(32,'Can view task',8,'view_task'),(33,'Can add individual_ phone',9,'add_individual_phone'),(34,'Can change individual_ phone',9,'change_individual_phone'),(35,'Can delete individual_ phone',9,'delete_individual_phone'),(36,'Can view individual_ phone',9,'view_individual_phone'),(37,'Can add organization',10,'add_organization'),(38,'Can change organization',10,'change_organization'),(39,'Can delete organization',10,'delete_organization'),(40,'Can view organization',10,'view_organization'),(41,'Can add task_ category',11,'add_task_category'),(42,'Can change task_ category',11,'change_task_category'),(43,'Can delete task_ category',11,'delete_task_category'),(44,'Can view task_ category',11,'view_task_category'),(45,'Can add predefined_ skill',12,'add_predefined_skill'),(46,'Can change predefined_ skill',12,'change_predefined_skill'),(47,'Can delete predefined_ skill',12,'delete_predefined_skill'),(48,'Can view predefined_ skill',12,'view_predefined_skill'),(49,'Can add organization_ office',13,'add_organization_office'),(50,'Can change organization_ office',13,'change_organization_office'),(51,'Can delete organization_ office',13,'delete_organization_office'),(52,'Can view organization_ office',13,'view_organization_office'),(53,'Can add benefit',14,'add_benefit'),(54,'Can change benefit',14,'change_benefit'),(55,'Can delete benefit',14,'delete_benefit'),(56,'Can view benefit',14,'view_benefit'),(57,'Can add individual_ predefined_ skill',15,'add_individual_predefined_skill'),(58,'Can change individual_ predefined_ skill',15,'change_individual_predefined_skill'),(59,'Can delete individual_ predefined_ skill',15,'delete_individual_predefined_skill'),(60,'Can view individual_ predefined_ skill',15,'view_individual_predefined_skill'),(61,'Can add task_ needed_ skill',16,'add_task_needed_skill'),(62,'Can change task_ needed_ skill',16,'change_task_needed_skill'),(63,'Can delete task_ needed_ skill',16,'delete_task_needed_skill'),(64,'Can view task_ needed_ skill',16,'view_task_needed_skill'),(65,'Can add individual_ custom_ skill',17,'add_individual_custom_skill'),(66,'Can change individual_ custom_ skill',17,'change_individual_custom_skill'),(67,'Can delete individual_ custom_ skill',17,'delete_individual_custom_skill'),(68,'Can view individual_ custom_ skill',17,'view_individual_custom_skill'),(69,'Can add organization_ phone',18,'add_organization_phone'),(70,'Can change organization_ phone',18,'change_organization_phone'),(71,'Can delete organization_ phone',18,'delete_organization_phone'),(72,'Can view organization_ phone',18,'view_organization_phone'),(73,'Can add task_ custom_ trait',19,'add_task_custom_trait'),(74,'Can change task_ custom_ trait',19,'change_task_custom_trait'),(75,'Can delete task_ custom_ trait',19,'delete_task_custom_trait'),(76,'Can view task_ custom_ trait',19,'view_task_custom_trait'),(77,'Can add individual',20,'add_individual'),(78,'Can change individual',20,'change_individual'),(79,'Can delete individual',20,'delete_individual'),(80,'Can view individual',20,'view_individual'),(81,'Can add predefined_ task_ trait',21,'add_predefined_task_trait'),(82,'Can change predefined_ task_ trait',21,'change_predefined_task_trait'),(83,'Can delete predefined_ task_ trait',21,'delete_predefined_task_trait'),(84,'Can view predefined_ task_ trait',21,'view_predefined_task_trait'),(85,'Can add volunteering',22,'add_volunteering'),(86,'Can change volunteering',22,'change_volunteering'),(87,'Can delete volunteering',22,'delete_volunteering'),(88,'Can view volunteering',22,'view_volunteering'),(89,'Can add predefined_ trait_ of_ task',23,'add_predefined_trait_of_task'),(90,'Can change predefined_ trait_ of_ task',23,'change_predefined_trait_of_task'),(91,'Can delete predefined_ trait_ of_ task',23,'delete_predefined_trait_of_task'),(92,'Can view predefined_ trait_ of_ task',23,'view_predefined_trait_of_task'),(93,'Can add vulnerability_ proof',24,'add_vulnerability_proof'),(94,'Can change vulnerability_ proof',24,'change_vulnerability_proof'),(95,'Can delete vulnerability_ proof',24,'delete_vulnerability_proof'),(96,'Can view vulnerability_ proof',24,'view_vulnerability_proof'),(97,'Can add individual_ social',25,'add_individual_social'),(98,'Can change individual_ social',25,'change_individual_social'),(99,'Can delete individual_ social',25,'delete_individual_social'),(100,'Can view individual_ social',25,'view_individual_social'),(101,'Can add organization_ social',26,'add_organization_social'),(102,'Can change organization_ social',26,'change_organization_social'),(103,'Can delete organization_ social',26,'delete_organization_social'),(104,'Can view organization_ social',26,'view_organization_social'),(105,'Can add benefits_ acquisition',27,'add_benefits_acquisition'),(106,'Can change benefits_ acquisition',27,'change_benefits_acquisition'),(107,'Can delete benefits_ acquisition',27,'delete_benefits_acquisition'),(108,'Can view benefits_ acquisition',27,'view_benefits_acquisition'),(109,'Can add individual_ record',28,'add_individual_record'),(110,'Can change individual_ record',28,'change_individual_record'),(111,'Can delete individual_ record',28,'delete_individual_record'),(112,'Can view individual_ record',28,'view_individual_record'),(113,'Can add organization_ record',29,'add_organization_record'),(114,'Can change organization_ record',29,'change_organization_record'),(115,'Can delete organization_ record',29,'delete_organization_record'),(116,'Can view organization_ record',29,'view_organization_record');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +231,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,7 +240,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(14,'website','benefit'),(27,'website','benefits_acquisition'),(7,'website','health_vulnerability_proof'),(20,'website','individual'),(17,'website','individual_custom_skill'),(9,'website','individual_phone'),(15,'website','individual_predefined_skill'),(25,'website','individual_social'),(10,'website','organization'),(13,'website','organization_office'),(18,'website','organization_phone'),(26,'website','organization_social'),(12,'website','predefined_skill'),(21,'website','predefined_task_trait'),(23,'website','predefined_trait_of_task'),(8,'website','task'),(11,'website','task_category'),(19,'website','task_custom_trait'),(16,'website','task_needed_skill'),(22,'website','volunteering'),(24,'website','vulnerability_proof');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(14,'website','benefit'),(27,'website','benefits_acquisition'),(7,'website','health_vulnerability_proof'),(20,'website','individual'),(17,'website','individual_custom_skill'),(9,'website','individual_phone'),(15,'website','individual_predefined_skill'),(28,'website','individual_record'),(25,'website','individual_social'),(10,'website','organization'),(13,'website','organization_office'),(18,'website','organization_phone'),(29,'website','organization_record'),(26,'website','organization_social'),(12,'website','predefined_skill'),(21,'website','predefined_task_trait'),(23,'website','predefined_trait_of_task'),(8,'website','task'),(11,'website','task_category'),(19,'website','task_custom_trait'),(16,'website','task_needed_skill'),(22,'website','volunteering'),(24,'website','vulnerability_proof');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,7 +257,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -266,7 +266,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-01-24 16:48:57.819395'),(2,'auth','0001_initial','2025-01-24 16:48:58.369451'),(3,'admin','0001_initial','2025-01-24 16:48:58.488508'),(4,'admin','0002_logentry_remove_auto_add','2025-01-24 16:48:58.494976'),(5,'admin','0003_logentry_add_action_flag_choices','2025-01-24 16:48:58.501059'),(6,'contenttypes','0002_remove_content_type_name','2025-01-24 16:48:58.563489'),(7,'auth','0002_alter_permission_name_max_length','2025-01-24 16:48:58.632035'),(8,'auth','0003_alter_user_email_max_length','2025-01-24 16:48:58.652603'),(9,'auth','0004_alter_user_username_opts','2025-01-24 16:48:58.659132'),(10,'auth','0005_alter_user_last_login_null','2025-01-24 16:48:58.706010'),(11,'auth','0006_require_contenttypes_0002','2025-01-24 16:48:58.708556'),(12,'auth','0007_alter_validators_add_error_messages','2025-01-24 16:48:58.713638'),(13,'auth','0008_alter_user_username_max_length','2025-01-24 16:48:58.771024'),(14,'auth','0009_alter_user_last_name_max_length','2025-01-24 16:48:58.836120'),(15,'auth','0010_alter_group_name_max_length','2025-01-24 16:48:58.849322'),(16,'auth','0011_update_proxy_permissions','2025-01-24 16:48:58.858809'),(17,'auth','0012_alter_user_first_name_max_length','2025-01-24 16:48:58.908763'),(18,'sessions','0001_initial','2025-01-24 16:48:58.936258'),(20,'website','0001_initial','2025-01-24 20:58:10.015488');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2025-01-24 16:48:57.819395'),(2,'auth','0001_initial','2025-01-24 16:48:58.369451'),(3,'admin','0001_initial','2025-01-24 16:48:58.488508'),(4,'admin','0002_logentry_remove_auto_add','2025-01-24 16:48:58.494976'),(5,'admin','0003_logentry_add_action_flag_choices','2025-01-24 16:48:58.501059'),(6,'contenttypes','0002_remove_content_type_name','2025-01-24 16:48:58.563489'),(7,'auth','0002_alter_permission_name_max_length','2025-01-24 16:48:58.632035'),(8,'auth','0003_alter_user_email_max_length','2025-01-24 16:48:58.652603'),(9,'auth','0004_alter_user_username_opts','2025-01-24 16:48:58.659132'),(10,'auth','0005_alter_user_last_login_null','2025-01-24 16:48:58.706010'),(11,'auth','0006_require_contenttypes_0002','2025-01-24 16:48:58.708556'),(12,'auth','0007_alter_validators_add_error_messages','2025-01-24 16:48:58.713638'),(13,'auth','0008_alter_user_username_max_length','2025-01-24 16:48:58.771024'),(14,'auth','0009_alter_user_last_name_max_length','2025-01-24 16:48:58.836120'),(15,'auth','0010_alter_group_name_max_length','2025-01-24 16:48:58.849322'),(16,'auth','0011_update_proxy_permissions','2025-01-24 16:48:58.858809'),(17,'auth','0012_alter_user_first_name_max_length','2025-01-24 16:48:58.908763'),(18,'sessions','0001_initial','2025-01-24 16:48:58.936258'),(20,'website','0001_initial','2025-01-24 20:58:10.015488'),(21,'website','0002_individual_record_organization_record','2025-01-26 11:46:57.601596'),(22,'website','0003_task_points_given','2025-01-26 11:50:00.923742'),(23,'website','0004_task_people_needed','2025-01-26 13:26:43.568591'),(24,'website','0005_alter_task_needed_skill_skill_code','2025-01-26 13:47:09.210943');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -400,7 +400,7 @@ CREATE TABLE `website_individual` (
   `social_points` int NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `website_individual_chk_1` CHECK ((`document_type` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,6 +409,7 @@ CREATE TABLE `website_individual` (
 
 LOCK TABLES `website_individual` WRITE;
 /*!40000 ALTER TABLE `website_individual` DISABLE KEYS */;
+INSERT INTO `website_individual` VALUES (1,'19630911-63531',0,'тестовий опис особи 1',50.512284,30.435295,'вул. Перемишльська 15, Київ',10),(2,'19821128-72140',0,'тут має бути опис особи 2...',50.418806,30.633418,'вул. М. Драгоманова 2, Київ',0);
 /*!40000 ALTER TABLE `website_individual` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -698,7 +699,7 @@ CREATE TABLE `website_predefined_trait_of_task` (
   KEY `website_predefined_t_task_id_572e3e37_fk_website_t` (`task_id`),
   CONSTRAINT `website_predefined_t_task_id_572e3e37_fk_website_t` FOREIGN KEY (`task_id`) REFERENCES `website_task` (`id`),
   CONSTRAINT `website_predefined_t_trait_code_id_53bb5af0_fk_website_p` FOREIGN KEY (`trait_code_id`) REFERENCES `website_predefined_task_trait` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -707,6 +708,7 @@ CREATE TABLE `website_predefined_trait_of_task` (
 
 LOCK TABLES `website_predefined_trait_of_task` WRITE;
 /*!40000 ALTER TABLE `website_predefined_trait_of_task` DISABLE KEYS */;
+INSERT INTO `website_predefined_trait_of_task` VALUES (1,0,1),(2,3,2),(3,1,2);
 /*!40000 ALTER TABLE `website_predefined_trait_of_task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -729,13 +731,16 @@ CREATE TABLE `website_task` (
   `status` smallint unsigned NOT NULL,
   `asking_individual_id` bigint DEFAULT NULL,
   `category_id` smallint unsigned DEFAULT NULL,
+  `points_given` int NOT NULL,
+  `people_needed` smallint unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `website_task_asking_individual_id_03e0e138_fk_website_i` (`asking_individual_id`),
   KEY `website_task_category_id_751586d8_fk_website_task_category_code` (`category_id`),
   CONSTRAINT `website_task_asking_individual_id_03e0e138_fk_website_i` FOREIGN KEY (`asking_individual_id`) REFERENCES `website_individual` (`id`),
   CONSTRAINT `website_task_category_id_751586d8_fk_website_task_category_code` FOREIGN KEY (`category_id`) REFERENCES `website_task_category` (`code`),
-  CONSTRAINT `website_task_chk_1` CHECK ((`status` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `website_task_chk_1` CHECK ((`status` >= 0)),
+  CONSTRAINT `website_task_chk_2` CHECK ((`people_needed` >= 0))
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -744,6 +749,7 @@ CREATE TABLE `website_task` (
 
 LOCK TABLES `website_task` WRITE;
 /*!40000 ALTER TABLE `website_task` DISABLE KEYS */;
+INSERT INTO `website_task` VALUES (1,'ще demo завдання','якийсь demo опис',50.511663,30.436976,'вул. Перемишльська 13Б, Київ','2025-01-26 14:29:00.000000','2025-01-27 17:00:45.000000',0,1,2,50,1),(2,'тестове завдання','тут має бути опис цього завдання',50.417991,30.63461,'вул. М. Драгоманова 2Б, Київ','2025-01-25 12:30:00.000000','2025-01-27 14:00:45.000000',0,2,3,30,1);
 /*!40000 ALTER TABLE `website_task` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -809,14 +815,14 @@ DROP TABLE IF EXISTS `website_task_needed_skill`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `website_task_needed_skill` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `skill_code_id` bigint NOT NULL,
+  `skill_code_id` smallint unsigned NOT NULL,
   `task_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `website_task_needed__skill_code_id_60a117f5_fk_website_i` (`skill_code_id`),
   KEY `website_task_needed_skill_task_id_ffd5ca6e_fk_website_task_id` (`task_id`),
-  CONSTRAINT `website_task_needed__skill_code_id_60a117f5_fk_website_i` FOREIGN KEY (`skill_code_id`) REFERENCES `website_individual_predefined_skill` (`id`),
+  KEY `website_task_needed__skill_code_id_60a117f5_fk_website_p` (`skill_code_id`),
+  CONSTRAINT `website_task_needed__skill_code_id_60a117f5_fk_website_p` FOREIGN KEY (`skill_code_id`) REFERENCES `website_predefined_skill` (`code`),
   CONSTRAINT `website_task_needed_skill_task_id_ffd5ca6e_fk_website_task_id` FOREIGN KEY (`task_id`) REFERENCES `website_task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -825,6 +831,7 @@ CREATE TABLE `website_task_needed_skill` (
 
 LOCK TABLES `website_task_needed_skill` WRITE;
 /*!40000 ALTER TABLE `website_task_needed_skill` DISABLE KEYS */;
+INSERT INTO `website_task_needed_skill` VALUES (1,6,1);
 /*!40000 ALTER TABLE `website_task_needed_skill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -894,4 +901,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-25 21:21:19
+-- Dump completed on 2025-01-26 17:29:24

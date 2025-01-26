@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/task_style.css' %}">
+{%endblock%}
+
+{% block title %}Допомогти комусь{% endblock %}
+
+{% block content %}
+    <div class="def-padded">
+        <h1>Актуальні можливості допомоги</h1>
+        <hr/>
+
+        {% for t in tasks %}
+            {% include 'partial/task.html' with task=t %}
+        {% endfor %}
+
+    </div>
+{% endblock %}

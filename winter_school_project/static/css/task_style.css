@@ -1,0 +1,47 @@
+.card-bg {
+    margin-top: 5vh;
+    background-color: var(--mint-cream);
+    padding: 2vh;
+    box-shadow: 0.5vh 0.5vh 2vh var(--mantis);
+}
+
+.task-card>div:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+.task-card>div:nth-child(1) > div {
+    flex-grow: 1;
+    padding: 1vh;
+}
+.task-title {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    color: var(--mantis);
+    text-shadow: 1px 1px 0.5rem var(--celadon);
+}
+
+.topmost-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.individual-pic {
+    max-height: 12vh;
+}
+
+.address-area {
+    display: flex;
+    align-items: center;
+}
+.address-area>p {
+    flex-grow:1;
+}
+
+.due-area {
+    text-align: center;
+}
+.due-area>span {
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 3px 3px 1rem var(--mantis);
+}
