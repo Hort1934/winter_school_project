@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,13 +21,13 @@
 
 DROP TABLE IF EXISTS `auth_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `auth_group` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_group_permissions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `auth_group_permissions` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `group_id` int NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_permission`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `auth_permission` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `auth_user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `password` varchar(128) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,7 +134,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_user_groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `auth_user_groups` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE `auth_user_groups` (
   KEY `auth_user_groups_group_id_97559544_fk_auth_group_id` (`group_id`),
   CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +162,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `auth_user_user_permissions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `auth_user_user_permissions` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
@@ -172,7 +172,7 @@ CREATE TABLE `auth_user_user_permissions` (
   KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +190,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `django_admin_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `django_admin_log` (
   `id` int NOT NULL AUTO_INCREMENT,
   `action_time` datetime(6) NOT NULL,
@@ -206,7 +206,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,14 +224,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `django_content_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `django_content_type` (
   `id` int NOT NULL AUTO_INCREMENT,
   `app_label` varchar(100) NOT NULL,
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -250,14 +250,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `django_migrations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `django_migrations` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `app` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -276,14 +276,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `django_session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `django_session` (
   `session_key` varchar(40) NOT NULL,
   `session_data` longtext NOT NULL,
   `expire_date` datetime(6) NOT NULL,
   PRIMARY KEY (`session_key`),
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -301,7 +301,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_benefit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_benefit` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -314,7 +314,7 @@ CREATE TABLE `website_benefit` (
   KEY `website_benefit_organization_id_610dc930_fk_website_o` (`organization_id`),
   CONSTRAINT `website_benefit_organization_id_610dc930_fk_website_o` FOREIGN KEY (`organization_id`) REFERENCES `website_organization` (`id`),
   CONSTRAINT `website_benefit_chk_1` CHECK ((`days_duration` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -332,7 +332,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_benefits_acquisition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_benefits_acquisition` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `date_valid_since` date NOT NULL,
@@ -343,7 +343,7 @@ CREATE TABLE `website_benefits_acquisition` (
   KEY `website_benefits_acq_individual_id_97ab6b6f_fk_website_i` (`individual_id`),
   CONSTRAINT `website_benefits_acq_benefit_id_a721520a_fk_website_b` FOREIGN KEY (`benefit_id`) REFERENCES `website_benefit` (`id`),
   CONSTRAINT `website_benefits_acq_individual_id_97ab6b6f_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -361,7 +361,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_health_vulnerability_proof`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_health_vulnerability_proof` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `med_document_file` longblob NOT NULL,
@@ -370,7 +370,7 @@ CREATE TABLE `website_health_vulnerability_proof` (
   PRIMARY KEY (`id`),
   KEY `website_health_vulne_individual_id_b2559578_fk_website_i` (`individual_id`),
   CONSTRAINT `website_health_vulne_individual_id_b2559578_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -388,7 +388,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_individual`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_individual` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `document_number` longtext NOT NULL,
@@ -400,7 +400,7 @@ CREATE TABLE `website_individual` (
   `social_points` int NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `website_individual_chk_1` CHECK ((`document_type` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -418,7 +418,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_individual_custom_skill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_individual_custom_skill` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `text` varchar(255) NOT NULL,
@@ -426,7 +426,7 @@ CREATE TABLE `website_individual_custom_skill` (
   PRIMARY KEY (`id`),
   KEY `website_individual_c_individual_id_fe5f102c_fk_website_i` (`individual_id`),
   CONSTRAINT `website_individual_c_individual_id_fe5f102c_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -444,7 +444,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_individual_phone`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_individual_phone` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `phone_number` varchar(15) NOT NULL,
@@ -452,7 +452,7 @@ CREATE TABLE `website_individual_phone` (
   PRIMARY KEY (`id`),
   KEY `website_individual_p_individual_id_b7e346f2_fk_website_i` (`individual_id`),
   CONSTRAINT `website_individual_p_individual_id_b7e346f2_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -470,7 +470,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_individual_predefined_skill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_individual_predefined_skill` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `individual_id` bigint NOT NULL,
@@ -480,7 +480,7 @@ CREATE TABLE `website_individual_predefined_skill` (
   KEY `website_individual_p_skill_code_id_fe6dc5dc_fk_website_p` (`skill_code_id`),
   CONSTRAINT `website_individual_p_individual_id_8e4e7a63_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`),
   CONSTRAINT `website_individual_p_skill_code_id_fe6dc5dc_fk_website_p` FOREIGN KEY (`skill_code_id`) REFERENCES `website_predefined_skill` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -498,7 +498,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_individual_social`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_individual_social` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `nickname` longtext NOT NULL,
@@ -508,7 +508,7 @@ CREATE TABLE `website_individual_social` (
   KEY `website_individual_s_individual_id_dc919ae0_fk_website_i` (`individual_id`),
   CONSTRAINT `website_individual_s_individual_id_dc919ae0_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`),
   CONSTRAINT `website_individual_social_chk_1` CHECK ((`social_media_type` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -526,7 +526,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_organization`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_organization` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `document_number` longtext NOT NULL,
@@ -538,7 +538,7 @@ CREATE TABLE `website_organization` (
   `email` varchar(254) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `website_organization_chk_1` CHECK ((`document_type` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -556,7 +556,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_organization_office`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_organization_office` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `address_text` longtext NOT NULL,
@@ -566,7 +566,7 @@ CREATE TABLE `website_organization_office` (
   PRIMARY KEY (`id`),
   KEY `website_organization_organization_id_7807da54_fk_website_o` (`organization_id`),
   CONSTRAINT `website_organization_organization_id_7807da54_fk_website_o` FOREIGN KEY (`organization_id`) REFERENCES `website_organization` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -584,7 +584,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_organization_phone`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_organization_phone` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `phone_number` varchar(15) NOT NULL,
@@ -592,7 +592,7 @@ CREATE TABLE `website_organization_phone` (
   PRIMARY KEY (`id`),
   KEY `website_organization_organization_id_1f6ac5f7_fk_website_o` (`organization_id`),
   CONSTRAINT `website_organization_organization_id_1f6ac5f7_fk_website_o` FOREIGN KEY (`organization_id`) REFERENCES `website_organization` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -610,7 +610,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_organization_social`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_organization_social` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `nickname` longtext NOT NULL,
@@ -620,7 +620,7 @@ CREATE TABLE `website_organization_social` (
   KEY `website_organization_organization_id_9739f1d6_fk_website_o` (`organization_id`),
   CONSTRAINT `website_organization_organization_id_9739f1d6_fk_website_o` FOREIGN KEY (`organization_id`) REFERENCES `website_organization` (`id`),
   CONSTRAINT `website_organization_social_chk_1` CHECK ((`social_media_type` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -638,13 +638,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_predefined_skill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_predefined_skill` (
   `code` smallint unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`code`),
   CONSTRAINT `website_predefined_skill_chk_1` CHECK ((`code` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -662,13 +662,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_predefined_task_trait`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_predefined_task_trait` (
   `code` smallint unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`code`),
   CONSTRAINT `website_predefined_task_trait_chk_1` CHECK ((`code` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -686,7 +686,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_predefined_trait_of_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_predefined_trait_of_task` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `trait_code_id` smallint unsigned NOT NULL,
@@ -696,7 +696,7 @@ CREATE TABLE `website_predefined_trait_of_task` (
   KEY `website_predefined_t_task_id_572e3e37_fk_website_t` (`task_id`),
   CONSTRAINT `website_predefined_t_task_id_572e3e37_fk_website_t` FOREIGN KEY (`task_id`) REFERENCES `website_task` (`id`),
   CONSTRAINT `website_predefined_t_trait_code_id_53bb5af0_fk_website_p` FOREIGN KEY (`trait_code_id`) REFERENCES `website_predefined_task_trait` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -714,7 +714,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_task` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -733,7 +733,7 @@ CREATE TABLE `website_task` (
   CONSTRAINT `website_task_asking_individual_id_03e0e138_fk_website_i` FOREIGN KEY (`asking_individual_id`) REFERENCES `website_individual` (`id`),
   CONSTRAINT `website_task_category_id_751586d8_fk_website_task_category_code` FOREIGN KEY (`category_id`) REFERENCES `website_task_category` (`code`),
   CONSTRAINT `website_task_chk_1` CHECK ((`status` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -751,7 +751,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_task_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_task_category` (
   `code` smallint unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -759,7 +759,7 @@ CREATE TABLE `website_task_category` (
   `max_points` int NOT NULL,
   PRIMARY KEY (`code`),
   CONSTRAINT `website_task_category_chk_1` CHECK ((`code` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -777,7 +777,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_task_custom_trait`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_task_custom_trait` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `text` varchar(255) NOT NULL,
@@ -785,7 +785,7 @@ CREATE TABLE `website_task_custom_trait` (
   PRIMARY KEY (`id`),
   KEY `website_task_custom_trait_task_id_c4df50c9_fk_website_task_id` (`task_id`),
   CONSTRAINT `website_task_custom_trait_task_id_c4df50c9_fk_website_task_id` FOREIGN KEY (`task_id`) REFERENCES `website_task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -803,7 +803,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_task_needed_skill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_task_needed_skill` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `skill_code_id` bigint NOT NULL,
@@ -813,7 +813,7 @@ CREATE TABLE `website_task_needed_skill` (
   KEY `website_task_needed_skill_task_id_ffd5ca6e_fk_website_task_id` (`task_id`),
   CONSTRAINT `website_task_needed__skill_code_id_60a117f5_fk_website_i` FOREIGN KEY (`skill_code_id`) REFERENCES `website_individual_predefined_skill` (`id`),
   CONSTRAINT `website_task_needed_skill_task_id_ffd5ca6e_fk_website_task_id` FOREIGN KEY (`task_id`) REFERENCES `website_task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -831,7 +831,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_volunteering`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_volunteering` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `is_accepted` tinyint(1) NOT NULL,
@@ -842,7 +842,7 @@ CREATE TABLE `website_volunteering` (
   KEY `website_volunteering_task_id_a65a7950_fk_website_task_id` (`task_id`),
   CONSTRAINT `website_volunteering_individual_id_3ae8e482_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`),
   CONSTRAINT `website_volunteering_task_id_a65a7950_fk_website_task_id` FOREIGN KEY (`task_id`) REFERENCES `website_task` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -860,7 +860,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `website_vulnerability_proof`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `website_vulnerability_proof` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `vulnerability_type` smallint unsigned NOT NULL,
@@ -870,7 +870,7 @@ CREATE TABLE `website_vulnerability_proof` (
   KEY `website_vulnerabilit_individual_id_c807adde_fk_website_i` (`individual_id`),
   CONSTRAINT `website_vulnerabilit_individual_id_c807adde_fk_website_i` FOREIGN KEY (`individual_id`) REFERENCES `website_individual` (`id`),
   CONSTRAINT `website_vulnerability_proof_chk_1` CHECK ((`vulnerability_type` >= 0))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

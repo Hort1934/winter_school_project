@@ -1,21 +1,24 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Платформа Волонтерства{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block links %}
+    {% endblock %}
 </head>
 <body>
-    <!-- Верхнє меню -->
     <nav class="navbar">
-        <div class="navbar-left">
-            <p><a href="/">Home</a></p>
-                <img src="{% static 'images/logo.png' %}" alt="Лого" />
-                <span>Платформа Волонтерства</span>
-            </a>
-        </div>
+            {% block navbar %}
+    {% endblock %}
     </nav>
+    <main>
+            {% block content %}
+    {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Платформа Волонтерства</p>
+    </footer>
 </body>
 </html>
