@@ -72,6 +72,8 @@ class Task(models.Model):
     datetime_planned = models.DateTimeField()
     category = models.ForeignKey(Task_Category, on_delete=models.SET_NULL, null=True)
     status = models.PositiveSmallIntegerField()
+    points_given = models.IntegerField(default=10)
+    people_needed = models.PositiveSmallIntegerField(default=1)
 
 class Predefined_Trait_Of_Task(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
@@ -83,7 +85,7 @@ class Task_Custom_Trait(models.Model):
 
 class Task_Needed_Skill(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
-    skill_code = models.ForeignKey(Individual_Predefined_Skill, on_delete=models.CASCADE)
+    skill_code = models.ForeignKey(Predefined_Skill, on_delete=models.CASCADE)
 
 class Volunteering(models.Model):
     individual = models.ForeignKey(Individual, on_delete=models.CASCADE)

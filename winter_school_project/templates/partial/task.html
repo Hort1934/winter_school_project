@@ -1,0 +1,36 @@
+{% load static %}
+
+<div class="card-bg task-card">
+    <div>
+        <img class="individual-pic" src="{% static 'images/no_pic_test_icon.jpg' %}"/>
+        <div>
+            <div class="topmost-info">
+                <p>ПІБ особи</p>
+                <p>{{task.datetime_created}}</p>
+            </div>
+            <h2 class="task-title">{{ task.name }}</h2>
+        </div>
+    </div>
+    <p>{{task.description}}</p>
+    <p>Категорія: <span class="badge">{{task.category.name}}</span></p>
+    <hr/>
+    <div class="address-area">
+        <p>{{task.address_text}}</p>
+        <a class="map-btn">Показати на карті</a>
+    </div>
+    <hr/>
+    <p class="due-area">Час: <span>{{task.datetime_planned}}</span></p>
+
+    <div class="badges-container">
+    {% for sk in task.task_needed_skill_set.all %}
+        <span class="badge">{{ sk.skill_code.name }}</span>
+    {% endfor %}
+
+    {% for tr in task.predefined_trait_of_task_set.all %}
+        <span class="badge">{{ tr.trait_code.name }}</span>
+    {% endfor %}
+    </div>
+
+    <p>Орієнтовна кількість людей для виконання: {{task.people_needed}}</p>
+    <hr/>
+</div>

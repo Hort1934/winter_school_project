@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
+from website import models
+
 
 def web_index(request):
     return render(request, 'website/homepage.html')
@@ -9,7 +11,11 @@ def home(request):
     return render(request, 'home.html')
 
 def volunteer_tasks(request):
-    return render(request, 'volunteer_tasks.html')
+
+    context = {
+        'tasks': models.Task.objects.all()
+    }
+    return render(request, 'volunteer_tasks.html', context)
 
 def request_help(request):
     return render(request, 'request_help.html')
