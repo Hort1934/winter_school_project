@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Головна{% endblock %}
+
+{% block links %}
+    <link rel='stylesheet' href="{% static 'css/registration.css' %}">
+{%endblock%}
+
+{% block navbar %}
+    <div class="navbar-left">
+            <a href="{% url 'home' %}" class="logo">
+                <img class="logo-pic" src="{% static 'images/logo.jpg' %}" alt="Лого" />
+
+            </a>
+        </div>
+        <div class="navbar-center">
+            <a href="{% url 'volunteer_tasks' %}">Волонтерство</a>
+            <a href="{% url 'request_help' %}">Потребую допомоги</a>
+            <a href="{% url 'important_info' %}">Важливо знати</a>
+            <div class="dropdown">
+                <button class="dropbtn">Про платформу</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'about' %}" class="dropdown-item">Про нас</a>
+                    <a href="{% url 'how_it_works' %}" class="dropdown-item">Як це працює</a>
+                    <a href="{% url 'faq' %}" class="dropdown-item">Питання та відповіді</a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="{% url 'profile' %}">
+                <img src="{% static 'images/profile_icon.png' %}" alt="Профіль" />
+            </a>
+            <span class="social-balance">Баланс: 100</span>
+            <a href="{% url 'notifications' %}">
+                <img src="{% static 'images/notifications_icon.png' %}" alt="Повідомлення" />
+            </a>
+        </div>
+{% endblock %}
+
+{% block content %}
+<div class="def-padded">
+    <h1>Ласкаво просимо на Платформу Волонтерства!</h1>
+    <hr/>
+    <p>Волонтерити може кожен!</p>
+</div>
+
+<div id="big-btns-container">
+    <a href="{% url 'volunteer_tasks' %}" id="icanhelp" class="intro-button">Я хочу допомогти</a>
+    <div id="between-btns"></div>
+    <a href="{% url 'request_help' %}" id="helpme" class="intro-button">Я потребую допомоги</a>
+</div>
+{% endblock %}

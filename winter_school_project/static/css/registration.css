@@ -1,0 +1,196 @@
+/* Variables */
+:root {
+    --mint-cream: #f1fffaff;
+    --tea-green: #ccfccbff;
+    --celadon: #96e6b3ff;
+    --mantis: #56b259ff;
+    --outer-space: #464e47ff;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    background: var(--mint-cream);
+}
+
+h1 {
+    text-shadow: 0 0 1rem var(--celadon);
+    text-align: center;
+    padding-top: 3vh;
+    color: var(--mantis);
+}
+
+p {
+    color: var(--outer-space);
+}
+
+div > p:last-child {
+    text-align: center;
+}
+
+/* Layout */
+main {
+    display: grid;
+    background: var(--mint-cream);
+    flex-grow: 1;
+    grid-template-rows: auto minmax(0, 100%);
+    box-shadow: inset 0 2vh 4vh 0 var(--mint-cream);
+}
+
+main > div:nth-child(1) {
+    padding: 6vh 10vh 0;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    background-color: var(--mantis);
+    height: 100px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: var(--mint-cream);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding:0px;
+}
+
+.navbar .dropdown-item {
+    margin:0px;
+}
+
+.navbar .dropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.navbar .dropdown-content a:hover {
+    background: var(--tea-green);
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar-left {
+    align-items: center;
+    justify-content: center;
+    flex-direction: center;
+}
+
+/* Buttons */
+.intro-button, .btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.intro-button {
+    width: 30%;
+    border: 4px solid white;
+    font-size: 2.25rem;
+    border-radius: 4vh;
+    padding: 8vh 6vh;
+}
+
+.btn {
+    background-color: #28a745;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+#icanhelp {
+    background-color: var(--celadon);
+    color: var(--outer-space);
+}
+
+#icanhelp:hover {
+    box-shadow: inset 0 0 5vh 2vh var(--tea-green);
+}
+
+#icanhelp:active {
+    box-shadow: inset 0 0 2vh 0.5vh var(--mantis);
+}
+
+#helpme {
+    background-color: var(--mantis);
+    color: var(--mint-cream);
+}
+
+#helpme:hover {
+    box-shadow: inset 0 0 5vh 1vh var(--celadon);
+}
+
+#helpme:active {
+    box-shadow: inset 0 0 2vh 0.5vh var(--outer-space);
+}
+
+#big-btns-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#between-btns {
+    width: 20vh;
+}
+
+/* Miscellaneous */
+.ui-description {
+    font-size: 1.5rem;
+}
+
+.social-balance {
+    font-size: 1.2rem;
+    color: var(--mint-cream);
+    text-shadow: 1px 1px 0.5rem var(--mantis);
+}
+
+img {
+    transform: rotate(90deg);
+    width: 100px;
+    height: 150px;
+    object-fit: contain;
+    justify-self: center;
+}
