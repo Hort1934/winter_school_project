@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_3_2^$2tm#e@%0%voucve1**95xgy8(7ojjs0p377erv#u!394
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CSRF_TRUSTED_ORIGINS = ['http://*']
 
 # Application definition
 
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'desw2025appdb',
         'USER':'djangouser',
-        'PASSWORD':'',
+        'PASSWORD':'pass',
         'HOST': '127.0.0.1',
         'PORT' : '3306'
     },

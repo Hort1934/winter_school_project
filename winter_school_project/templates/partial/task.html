@@ -18,8 +18,12 @@
         <p>{{task.address_text}}</p>
         <a class="map-btn">Показати на карті</a>
     </div>
-    <hr/>
-    <p class="due-area">Час: <span>{{task.datetime_planned}}</span></p>
+
+    <div class="due-area">
+        <p>Час: <span>{{task.datetime_planned}}</span></p>
+        <p>Соц. балів: <span>{{task.points_given}}</span></p>
+    </div>
+     <hr/>
 
     <div class="badges-container">
     {% for sk in task.task_needed_skill_set.all %}
@@ -33,4 +37,7 @@
 
     <p>Орієнтовна кількість людей для виконання: {{task.people_needed}}</p>
     <hr/>
+    <div class="accept-area">
+        <button class="map-btn accept-btn">Прийняти</button>
+    </div>
 </div>

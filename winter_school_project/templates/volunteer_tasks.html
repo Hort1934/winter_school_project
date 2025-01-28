@@ -1,20 +1,95 @@
-{% extends 'base.html' %}
+{% extends 'layout.html' %}
 
 {% load static %}
-{% block extra_css %}
+{% block links %}
+    <link rel='stylesheet' href="{% static 'css/registration.css' %}">
     <link rel="stylesheet" href="{% static 'css/task_style.css' %}">
+
+    <script src="{% static 'js/task_script.js' %}"
+            onload="initSelfClosingDropdown('skills_picker');initSelfClosingDropdown('traits_picker')"></script>
 {%endblock%}
 
 {% block title %}Допомогти комусь{% endblock %}
 
 {% block content %}
-    <div class="def-padded">
+    <div class="def-padded" >
         <h1>Актуальні можливості допомоги</h1>
         <hr/>
+            <div id="task-filters">
+                <div>
+                    <p>Сортувати за:</p>
+                    <select id="sort-dropdown" onchange="changeFilters()">
+                        <option selected value="0">терміном виконання</option>
+                        <option value="1">актуальністю (термін - поточний час)</option>
+                    </select>
+                </div>
 
-        {% for t in tasks %}
-            {% include 'partial/task.html' with task=t %}
-        {% endfor %}
+                <div id="popup-container">
+                    <div>
+                        <p>Навички:</p>
+                        <div>
+                            <p id="sk-text" class="filter-summary">будь-які</p>
+                            <button id="edit_skills" class="map-btn"
+                                    onclick="placeDropdown('edit_skills', 'skills_picker', 'popup-container')">Редагувати вибір</button>
+                            <div id="skills_picker" class="popup-filter">
+                                <div>
+                                    <input type="checkbox" checked value=-1 id=no-sk
+                                           onchange="preventFromNoSelection(this, 'skills_picker'); changeNearbyText('skills_picker', 'sk-text')">
+                                    <label for=no-sk>Не потребує навичок</label>
+                                </div>
+                                {% for sk in all_skills %}
+                                    <div>
+                                        <input type="checkbox" value={{sk.code}} id=s{{sk.code}} checked
+                                               onchange="preventFromNoSelection(this, 'skills_picker'); changeNearbyText('skills_picker', 'sk-text')">
+                                        <label for=s{{sk.code}}>{{sk.name}}</label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Особливості завдання:</p>
+                        <div>
+                            <p id="tr-text" class="filter-summary">будь-які</p>
+                            <button id="edit_traits" class="map-btn"
+                                    onclick="placeDropdown('edit_traits', 'traits_picker', 'popup-container')">Редагувати вибір</button>
+                            <div id="traits_picker" class="popup-filter">
+                                <div>
+                                    <input type="checkbox" checked value=-1 id=no-tr
+                                           onchange="preventFromNoSelection(this, 'traits_picker'); changeNearbyText('traits_picker', 'tr-text')">
+                                    <label for=no-sk>Немає особливостей</label>
+                                </div>
+                                {% for tr in all_traits %}
+                                    <div>
+                                        <input type="checkbox" value={{tr.code}} id=t{{tr.code}} checked
+                                               onchange="preventFromNoSelection(this, 'traits_picker'); changeNearbyText('traits_picker', 'tr-text')">
+                                        <label for=t{{tr.code}}>{{tr.name}}</label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Категорія:</p>
+                        <select id="category-dropdown">
+                            <option selected value="-1">Будь-яка</option>
+                            {% for c in categories %}
+                                <option value={{c.code}}>{{c.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
 
+                    <div>
+                        <button class="badge" onclick="changeFilters()">Застосувати<br/>фільтри</button>
+                    </div>
+                </div>
+            </div>
+        <hr/>
+
+        <div id="tasks-here">
+            {% for t in tasks %}
+                {% include 'partial/task.html' with task=t %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
