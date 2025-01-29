@@ -187,10 +187,37 @@ nav {
     text-shadow: 1px 1px 0.5rem var(--mantis);
 }
 
+/* Округлення логотипу */
 img.logo-pic {
-    transform: rotate(90deg);
-    width: 100px;
-    height: 150px;
-    object-fit: contain;
-    justify-self: center;
+    transform: rotate(0deg);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
 }
+
+/* Стилі для іконок */
+.profile-icon, .notifications-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+.profile-icon:hover, .notifications-icon:hover {
+    transform: scale(1.1);
+}
+
+.nav-icon {
+    font-size: 1.8rem;
+    color: var(--mint-cream);
+    margin: 0 10px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.nav-icon:hover {
+    color: var(--tea-green);
+    transform: scale(1.1);
+}
+

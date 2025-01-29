@@ -5,6 +5,7 @@
 
 {% block links %}
     <link rel='stylesheet' href="{% static 'css/registration.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 {%endblock%}
 
 {% block navbar %}
@@ -28,13 +29,13 @@
             </div>
         </div>
         <div class="navbar-right">
-            <a href="{% url 'profile' %}">
-                <img src="{% static 'images/profile_icon.gitpng' %}" alt="Профіль" />
+            <a href="{% url 'profile' %}" class="nav-icon">
+                <i class="bi bi-person-circle"></i>
             </a>
             <span class="social-balance">Баланс: 100</span>
-            <a href="{% url 'notifications' %}">
-                <img src="{% static 'images/notifications_icon.png' %}" alt="Повідомлення" />
-            </a>
+            <a href="{% url 'notifications' %}" class="nav-icon">
+                <i class="bi bi-bell-fill"></i>
+            </a>                     
         </div>
 {% endblock %}
 
