@@ -2,7 +2,7 @@ import json
 
 from django.db.models import ExpressionWrapper, F, DurationField, Q
 from django.db.models.functions import Now
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.template import Template, RequestContext
 from django.views.decorators.csrf import csrf_exempt
@@ -74,8 +74,23 @@ def volunteer_tasks(request):
 
     return render(request, 'volunteer_tasks.html', context)
 
+@csrf_exempt
 def request_help(request):
-    return render(request, 'request_help.html')
+
+    if request.body:
+        body_json = json.loads(request.body)
+        category_option = int(body_json['category'])
+        selected_cat = models.Task_Category.objects.get(pk=category_option)
+        min_max_list = [selected_cat.min_points, selected_cat.max_points]
+        return JsonResponse(min_max_list, safe=False)
+
+    context = {
+        'categories': models.Task_Category.objects.all(),
+        'all_skills': models.Predefined_Skill.objects.all(),
+        'all_traits': models.Predefined_Task_Trait.objects.all()
+    }
+
+    return render(request, 'request_help.html', context)
 
 def important_info(request):
     return render(request, 'important_info.html')
