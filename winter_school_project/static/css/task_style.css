@@ -7,7 +7,7 @@
     display: flex;
 }
 
-.card-bg, .popup-filter {
+.card-bg, .checkbox-field {
     box-shadow: 0.5vh 0.5vh 2vh var(--mantis);
 }
 
@@ -118,33 +118,20 @@ button.map-btn {
     display: inline;
 }
 
-.popup-filter {
+
+.checkbox-field {
     padding: 1.5vh;
+    background-color: var(--tea-green);
+}
+
+.popup-filter {
+
     position: absolute;
     visibility: hidden;
-    background-color: var(--tea-green);
     display: grid;
     grid-template-columns: auto auto;
     max-width: 100vh;
 }
 .popup-filter > div {
     margin: 0.5vh;
-}
-
-select {
-    padding: 1vh;
-    border-radius: 1rem;
-    background: var(--tea-green);
-    border: 2px solid var(--mantis);
-}
-option:hover {
-    color: #444645;
-    background: #ddd;
-}
-
-input[type="checkbox"] {
-  width: 1rem;
-  height: 1rem;
-  accent-color: var(--mantis);
-  border-radius: 4px;
 }

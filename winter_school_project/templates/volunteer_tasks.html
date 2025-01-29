@@ -12,7 +12,7 @@
 {% block title %}Допомогти комусь{% endblock %}
 
 {% block content %}
-    <div class="def-padded" >
+    <div class="def-padded">
         <h1>Актуальні можливості допомоги</h1>
         <hr/>
             <div id="task-filters">
@@ -31,7 +31,7 @@
                             <p id="sk-text" class="filter-summary">будь-які</p>
                             <button id="edit_skills" class="map-btn"
                                     onclick="placeDropdown('edit_skills', 'skills_picker', 'popup-container')">Редагувати вибір</button>
-                            <div id="skills_picker" class="popup-filter">
+                            <div id="skills_picker" class="popup-filter checkbox-field">
                                 <div>
                                     <input type="checkbox" checked value=-1 id=no-sk
                                            onchange="preventFromNoSelection(this, 'skills_picker'); changeNearbyText('skills_picker', 'sk-text')">
@@ -53,7 +53,7 @@
                             <p id="tr-text" class="filter-summary">будь-які</p>
                             <button id="edit_traits" class="map-btn"
                                     onclick="placeDropdown('edit_traits', 'traits_picker', 'popup-container')">Редагувати вибір</button>
-                            <div id="traits_picker" class="popup-filter">
+                            <div id="traits_picker" class="popup-filter checkbox-field">
                                 <div>
                                     <input type="checkbox" checked value=-1 id=no-tr
                                            onchange="preventFromNoSelection(this, 'traits_picker'); changeNearbyText('traits_picker', 'tr-text')">
