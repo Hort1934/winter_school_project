@@ -6,20 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Платформа Волонтерства{% endblock %}</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel='stylesheet' href="{% static 'css/registration.css' %}">
+
     {% block links %}
     {% endblock %}
 </head>
-<body >
+<body>
     <nav class="navbar">
-    {% block navbar %}
-    {% endblock %}
+        <div class="navbar-left">
+            <a href="{% url 'home' %}" class="logo">
+                <img class="logo-pic" src="{% static 'images/logo.jpg' %}" alt="Лого" />
+            </a>
+        </div>
+        <div class="navbar-center">
+            <a href="{% url 'volunteer_tasks' %}">Волонтерство</a>
+            <a href="{% url 'request_help' %}">Потребую допомоги</a>
+            <a href="{% url 'important_info' %}">Важливо знати</a>
+            <div class="dropdown">
+                <button class="dropbtn map-btn">Про платформу</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'about' %}" class="dropdown-item">Про нас</a>
+                    <a href="{% url 'how_it_works' %}" class="dropdown-item">Як це працює</a>
+                    <a href="{% url 'faq' %}" class="dropdown-item">Питання та відповіді</a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <a href="{% url 'profile' %}" class="nav-icon">
+                <i class="bi bi-person-circle"></i>
+            </a>
+            <span class="social-balance">Баланс: 100</span>
+            <a href="{% url 'notifications' %}" class="nav-icon">
+                <i class="bi bi-bell-fill"></i>
+            </a>
+        </div>
     </nav>
+
     <main>
-            {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
     <footer>
-        <p>&copy; 2025 Платформа Волонтерства</p>
+        <p>&copy; 2025 Ближні</p>
     </footer>
 </body>
 </html>

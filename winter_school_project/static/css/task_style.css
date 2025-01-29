@@ -67,20 +67,8 @@
     display: flex;
     flex-wrap: wrap;
 }
-.map-btn, .badge {
-    border: 2px solid var(--tea-green);
-    padding: 10px;
-    border-radius: 1rem;
-}
-.map-btn {
-    background: var(--celadon);
-    color: var(--outer-space);
-    text-decoration: none;
-    text-shadow: 3px 3px 0.5rem var(--tea-green);
-}
-button.map-btn {
-    font-weight: bold;
-}
+
+
 
 .badge {
     background-color: var(--mantis);
