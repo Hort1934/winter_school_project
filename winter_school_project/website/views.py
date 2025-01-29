@@ -1,6 +1,6 @@
 import json
 
-from django.db.models import ExpressionWrapper, F, DurationField
+from django.db.models import ExpressionWrapper, F, DurationField, Q
 from django.db.models.functions import Now
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -16,6 +16,7 @@ def web_index(request):
 
 def home(request):
     return render(request, 'home.html')
+
 
 @csrf_exempt
 def volunteer_tasks(request):
@@ -58,22 +59,22 @@ def volunteer_tasks(request):
         else:
             all_tasks = all_tasks.order_by('datetime_planned')
 
-        context_dict = {
-            'tasks': all_tasks,
-            'categories': models.Task_Category.objects.all(),
-            'all_skills': all_skills,
-            'all_traits': all_traits
-        }
-
-        ajax_template = Template("{% for t in tasks %} {% include 'partial/task.html' with task=t %} {% endfor %}");
-        return HttpResponse(ajax_template.render(RequestContext(request, context_dict)))
+    tuples = []
+    for task in all_tasks:
+        record = (models.Individual_Record.objects.using('mockstatedb')
+                                                  .filter(document_number=task.asking_individual.document_number, document_type=task.asking_individual.document_type))[0]
+        tuples.append((task, record))
 
     context = {
-        'tasks': all_tasks,
+        'tuples': tuples,
         'categories': models.Task_Category.objects.all(),
         'all_skills': all_skills,
         'all_traits': all_traits
     }
+    if request.body:
+        ajax_template = Template("{% for t, r in tuples %} {% include 'partial/task.html' with task=t record=r %} {% endfor %}")
+        return HttpResponse(ajax_template.render(RequestContext(request, context)))
+
     return render(request, 'volunteer_tasks.html', context)
 
 def request_help(request):

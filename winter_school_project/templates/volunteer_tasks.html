@@ -87,8 +87,8 @@
         <hr/>
 
         <div id="tasks-here">
-            {% for t in tasks %}
-                {% include 'partial/task.html' with task=t %}
+            {% for t, r in tuples %}
+                {% include 'partial/task.html' with task=t record=r %}
             {% endfor %}
         </div>
     </div>
