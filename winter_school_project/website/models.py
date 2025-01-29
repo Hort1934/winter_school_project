@@ -27,8 +27,7 @@ class Individual(models.Model):
     document_number = models.TextField()
     document_type = models.PositiveSmallIntegerField()
     description = models.TextField()
-    location_lat = models.FloatField(null=True)
-    location_long = models.FloatField(null=True)
+    location_url = models.URLField(null=True)
     address_text = models.TextField(null=True)
     social_points = models.IntegerField(default=0)
 
@@ -56,8 +55,7 @@ class Vulnerability_Proof(models.Model):
 
 class Health_Vulnerability_Proof(models.Model):
     individual = models.ForeignKey(Individual, on_delete=models.CASCADE)
-    med_document_file = models.BinaryField()
-    content_type = models.CharField(max_length=127)
+    med_document_url = models.URLField(null=True)
 # -------
 
 # завдання та те що з ними пов'язане
@@ -65,8 +63,7 @@ class Task(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     asking_individual = models.ForeignKey(Individual, on_delete=models.SET_NULL, null=True)
-    location_lat = models.FloatField(null=True)
-    location_long = models.FloatField(null=True)
+    location_url = models.URLField(null=True)
     address_text = models.TextField(null=True)
     datetime_created = models.DateTimeField()
     datetime_planned = models.DateTimeField()
@@ -99,8 +96,7 @@ class Organization(models.Model):
     document_type = models.PositiveSmallIntegerField()
     unofficial_name = models.CharField(max_length=255)
     description = models.TextField()
-    logo_file = models.BinaryField(null=True)
-    logo_content_type=models.CharField(max_length=127, null=True)
+    logo_url = models.URLField(null=True)
     email = models.EmailField()
 
 class Organization_Phone(models.Model):
@@ -115,8 +111,7 @@ class Organization_Social(models.Model):
 class Organization_Office(models.Model):
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
     address_text = models.TextField()
-    location_lat = models.FloatField(null=True)
-    location_long = models.FloatField(null=True)
+    location_url = models.URLField(null=True)
 # -------
 
 # пільги та те що з ними пов'язане
@@ -139,8 +134,7 @@ class Benefits_Acquisition(models.Model):
 class Individual_Record(models.Model):
     document_number = models.TextField()
     document_type = models.PositiveSmallIntegerField()
-    photo_file = models.BinaryField()
-    photo_type = models.CharField(max_length=127)
+    photo_url = models.URLField(null=True)
     full_name = models.CharField(max_length=255)
     birth_date = models.DateField()
 

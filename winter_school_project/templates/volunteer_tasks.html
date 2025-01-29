@@ -20,7 +20,7 @@
                     <p>Сортувати за:</p>
                     <select id="sort-dropdown" onchange="changeFilters()">
                         <option selected value="0">терміном виконання</option>
-                        <option value="1">актуальністю (термін - поточний час)</option>
+                        <option value="1">часом створення</option>
                     </select>
                 </div>
 
@@ -87,8 +87,8 @@
         <hr/>
 
         <div id="tasks-here">
-            {% for t in tasks %}
-                {% include 'partial/task.html' with task=t %}
+            {% for t, r in tuples %}
+                {% include 'partial/task.html' with task=t record=r %}
             {% endfor %}
         </div>
     </div>
