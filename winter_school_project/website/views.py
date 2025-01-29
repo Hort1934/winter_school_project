@@ -24,6 +24,7 @@ def volunteer_tasks(request):
     all_tasks = models.Task.objects.all()
     all_skills = models.Predefined_Skill.objects.all()
     all_traits = models.Predefined_Task_Trait.objects.all()
+    sort_option = 0
 
     if request.body:
         filter = json.loads(request.body)
@@ -52,12 +53,8 @@ def volunteer_tasks(request):
         all_tasks = all_tasks.filter(id__in=total_include)
 
         sort_option = int(filter['sorting'])
-        if sort_option==1:
-            all_tasks = all_tasks.annotate(
-                time_difference=ExpressionWrapper(F('datetime_planned') - Now(),output_field=DurationField())
-            ).order_by('time_difference')
-        else:
-            all_tasks = all_tasks.order_by('datetime_planned')
+        sort_field = '-datetime_created' if sort_option == 1 else 'datetime_planned'
+        all_tasks = all_tasks.order_by(sort_field)
 
     tuples = []
     for task in all_tasks:
