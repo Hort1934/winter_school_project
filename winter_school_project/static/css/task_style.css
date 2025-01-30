@@ -1,8 +1,20 @@
+#task-filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+#task-filters>div:nth-child(2) {
+    display: flex;
+}
+
+.card-bg, .checkbox-field {
+    box-shadow: 0.5vh 0.5vh 2vh var(--mantis);
+}
+
 .card-bg {
     margin-top: 5vh;
     background-color: var(--mint-cream);
     padding: 2vh;
-    box-shadow: 0.5vh 0.5vh 2vh var(--mantis);
 }
 
 .task-card>div:nth-child(1) {
@@ -38,10 +50,76 @@
 }
 
 .due-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.due-area>p {
     text-align: center;
 }
-.due-area>span {
+
+.due-area>p>span {
     font-size: larger;
     font-weight: bold;
     text-shadow: 3px 3px 1rem var(--mantis);
+}
+
+.badges-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.badge {
+    background-color: var(--mantis);
+    color: var(--tea-green);
+}
+
+.badges-container>.badge {
+    margin-right: 1vh;
+}
+
+.accept-area {
+    text-align: center;
+}
+.accept-area > button {
+    font-size: larger;
+}
+
+#popup-container {
+    position: relative;
+}
+#popup-container > div {
+    margin-left: 3vh;
+}
+#popup-container > div:last-child {
+    align-self: center;
+}
+#popup-container > div:last-child>button {
+    padding: 1rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 0.5rem var(--celadon);
+    cursor: pointer;
+}
+
+.filter-summary {
+    display: inline;
+}
+
+
+.checkbox-field {
+    padding: 1.5vh;
+    background-color: var(--tea-green);
+}
+
+.popup-filter {
+
+    position: absolute;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 100vh;
+}
+.popup-filter > div {
+    margin: 0.5vh;
 }

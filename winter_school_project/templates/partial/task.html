@@ -1,12 +1,12 @@
-{% load static %}
+
 
 <div class="card-bg task-card">
     <div>
-        <img class="individual-pic" src="{% static 'images/no_pic_test_icon.jpg' %}"/>
+        <img class="individual-pic" src="{{record.photo_url}}"/>
         <div>
             <div class="topmost-info">
-                <p>ПІБ особи</p>
-                <p>{{task.datetime_created}}</p>
+                <p>{{record.full_name}}</p>
+                <p>{{task.datetime_created|date:'d.m.Y H:i'}}</p>
             </div>
             <h2 class="task-title">{{ task.name }}</h2>
         </div>
@@ -16,10 +16,16 @@
     <hr/>
     <div class="address-area">
         <p>{{task.address_text}}</p>
-        <a class="map-btn">Показати на карті</a>
+        {% if task.location_url %}
+            <a class="map-btn" href={{task.location_url}}>Показати на карті</a>
+        {% endif %}
     </div>
-    <hr/>
-    <p class="due-area">Час: <span>{{task.datetime_planned}}</span></p>
+
+    <div class="due-area">
+        <p>Час: <span>{{task.datetime_planned|date:'d.m.Y H:i'}}</span></p>
+        <p>Соц. балів: <span>{{task.points_given}}</span></p>
+    </div>
+     <hr/>
 
     <div class="badges-container">
     {% for sk in task.task_needed_skill_set.all %}
@@ -33,4 +39,7 @@
 
     <p>Орієнтовна кількість людей для виконання: {{task.people_needed}}</p>
     <hr/>
+    <div class="accept-area">
+        <button class="map-btn accept-btn">Прийняти</button>
+    </div>
 </div>

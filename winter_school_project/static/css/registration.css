@@ -25,8 +25,23 @@ h1 {
     color: var(--mantis);
 }
 
-p {
+p, select, label {
     color: var(--outer-space);
+}
+
+input[type='text'], input[type='url'], input[type='number'], textarea, select {
+     padding: 1vh;
+     border: 2px solid var(--mantis);
+     background: var(--tea-green);
+     font-family: Arial, sans-serif;
+}
+
+input[type='text'], input[type='url'], input[type='number'], textarea {
+    border-radius: 0.25rem;
+}
+
+select {
+    border-radius: 1rem;
 }
 
 div > p:last-child {
@@ -42,7 +57,7 @@ main {
     box-shadow: inset 0 2vh 4vh 0 var(--mint-cream);
 }
 
-main > div:nth-child(1) {
+.def-padded {
     padding: 6vh 10vh 0;
 }
 
@@ -140,6 +155,23 @@ nav {
     background-color: #218838;
 }
 
+
+.map-btn, .badge {
+    border: 2px solid var(--tea-green);
+    padding: 10px;
+    border-radius: 1rem;
+}
+.map-btn {
+    background: var(--celadon);
+    color: var(--outer-space);
+    text-decoration: none;
+    text-shadow: 3px 3px 0.5rem var(--tea-green);
+}
+button.map-btn {
+    font-weight: bold;
+}
+
+
 #icanhelp {
     background-color: var(--celadon);
     color: var(--outer-space);
@@ -187,10 +219,44 @@ nav {
     text-shadow: 1px 1px 0.5rem var(--mantis);
 }
 
-img {
-    transform: rotate(90deg);
-    width: 100px;
-    height: 150px;
-    object-fit: contain;
-    justify-self: center;
+/* Округлення логотипу */
+img.logo-pic {
+    transform: rotate(0deg);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Стилі для іконок */
+.profile-icon, .notifications-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+.profile-icon:hover, .notifications-icon:hover {
+    transform: scale(1.1);
+}
+
+.nav-icon {
+    font-size: 1.8rem;
+    color: var(--mint-cream);
+    margin: 0 10px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.nav-icon:hover {
+    color: var(--tea-green);
+    transform: scale(1.1);
+}
+
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--mantis);
+  border-radius: 4px;
 }
