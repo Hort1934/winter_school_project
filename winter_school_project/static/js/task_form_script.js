@@ -12,7 +12,7 @@ function onCategorySelected(dropdownId) {
             var range = JSON.parse(xhr.responseText);
             if(range === undefined) { return; }
 
-            document.getElementById("min-points").innerHTML = range[0]+"&ge;"
+            document.getElementById("min-points").innerHTML = range[0]+"&le;"
             document.getElementById("max-points").innerHTML = "&le;"+range[1];
 
             pointsInput = document.getElementById("social_points");
