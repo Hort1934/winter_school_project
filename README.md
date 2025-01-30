@@ -41,12 +41,11 @@ http://127.0.0.1:8000/
 
 ### Головний екран програми:
 
-![image](https://github.com/user-attachments/assets/7df35dd1-9a54-4843-bbd9-219fcba6fc9c)
-
+![image](https://github.com/user-attachments/assets/ae774415-6f9e-45b0-9f59-003684f1a7e0)
 
 ### Функціонал управління завданнями:
 
-![image](https://github.com/user-attachments/assets/9ac1d529-1c84-4664-b1ff-cd9bf9066c62)
+![image](https://github.com/user-attachments/assets/c4287a26-06dc-4429-ac1c-bd1d141da041)
 
 
 ## 🛠️ Використання
