@@ -1,4 +1,4 @@
-## Winter School Project
+## Ближні
 
 ### 🌟 Опис проєкту
 
