@@ -1,66 +1,67 @@
-## Ближні
+## Neighbours
 
-### 🌟 Опис проєкту
+### 🌟 Project description
 
-Ближні - це проект створений для підтримки вразливих людей, таких як літні люди та люди з інвалідністю, шляхом організації допомоги від волонтерів. Кожен волонтер отримує соціальні бали за виконання завдань, що є інноваційною системою винагороди. Ці бали можуть бути використані для отримання пільг або знижок від організацій, які визнають соцбали. Завдання створюються вразливими людьми, а їхній статус підтверджується через державні органи, що гарантує прозорість. Проект також інтегрується з державними базами для автоматичної перевірки статусів користувачів і полегшення процесу реєстрації.
+Blizhni is a project created to support vulnerable people, such as the elderly and people with disabilities, by organising help from volunteers. Each volunteer receives social points for completing tasks, which is an innovative reward system. These points can be used to receive benefits or discounts from organisations that recognise social points. The tasks are created by vulnerable people and their status is confirmed through government agencies, which guarantees transparency. The project also integrates with government databases to automatically check user statuses and facilitate the registration process.
 
-## 🔧 Встановлення
+## 🔧 Installation.
 
-### Клонування репозиторію:
-   ```bash
+### Cloning the repository:
+   ``` bash
 git clone https://github.com/Jorik-creator/winter_school_project.git
-   ```
-   ```bash
+ ```
+ ``` bash
 cd winter_school_project
-   ```
+ ```
 
-### Створення та активація вiртуального середовища (для Python):
+### Creating and activating a virtual environment (for Python):
    ```bash
 python3 -m venv venv
-   ```
-   ```bash
-source venv/bin/activate  # Для Windows використовуйте venv\Scripts\activate
-   ```
+ ```
+ ```bash
+source venv/bin/activate # For Windows, use venv\Scripts\activate
+ ```
 
-### Встановлення залежностей:
+### Installing dependencies:
    ```bash
 pip install -r requirements.txt
-   ```
-### Застосування міграцій бази даних:
+ ```
+### Applying database migrations:
    ```bash
 python manage.py migrate
-   ```
-### Запуск сервера розробки:
+ ```
+### Starting the development server:
    ```bash
 python manage.py runserver
-   ```
-### Відкрийте проект у браузері:
+ ```
+### Open the project in a browser:
 http://127.0.0.1:8000/
 
-## 🖼️ Скриншоти
+## 🖼️ Screenshots.
 
-### Головний екран програми:
+### The main screen of the application:
 
 ![image](https://github.com/user-attachments/assets/ae774415-6f9e-45b0-9f59-003684f1a7e0)
 
-### Функціонал управління завданнями:
+### Task management functionality:
 
 ![image](https://github.com/user-attachments/assets/c4287a26-06dc-4429-ac1c-bd1d141da041)
 
 
-## 🛠️ Використання
+## 🛠️ Usage
 
-Переконайтеся, що ви успішно встановили всі залежності.
+Make sure you have successfully installed all dependencies.
 
-Запустіть програму за допомогою команди python manage.py runserver.
+Run the application using the python command manage.py runserver.
 
-Дотримуйтеся інструкцій у користувацькому інтерфейсі.
+Follow the instructions in the user interface.
 
-## ⚖️ Ліцензія
+## ⚖️ Licence
 
-Цей проєкт розповсюджується під ліцензією [MIT License](LICENSE)
+This project is distributed under the [MIT License](LICENSE)
 
-## 💌 Зворотній зв'язок
+## 💌 Feedback
 
-Якщо у вас є питання або пропозиції щодо покращення проєкту, будь ласка, створюйте Issue або надсилайте Pull Request.
+If you have any questions or suggestions on how to improve the project, please create an Issue or send a Pull Request.
 
+Translated with DeepL.com (free version)
